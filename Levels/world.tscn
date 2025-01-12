@@ -47,7 +47,6 @@ material = SubResource("StandardMaterial3D_qek4r")
 
 [node name="CSGBox3D60" type="CSGBox3D" parent="Level_1/Maze"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.60905, 0)
-visible = false
 use_collision = true
 size = Vector3(50, 0.5, 50)
 material = SubResource("StandardMaterial3D_5yc3v")

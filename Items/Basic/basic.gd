@@ -11,5 +11,5 @@ func _on_body_entered(body: Node3D) -> void:
 		if not audio_stream_player.is_connected("finished", Callable(self, "_on_audio_finished")):
 			audio_stream_player.connect("finished", Callable(self, "_on_audio_finished").bind(body))
 
-func _on_audio_finished() -> void:
+func _on_audio_finished(_body: Player) -> void:
 	queue_free()

@@ -21,6 +21,6 @@ shape = SubResource("SphereShape3D_gbkyw")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_he1bb")
-bus = &"Background"
+bus = &"Pick Up"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

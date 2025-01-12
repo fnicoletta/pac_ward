@@ -7,8 +7,9 @@ func _on_body_entered(body: Node3D) -> void:
 	if body is Player:
 		sphere.visible = false
 		audio_stream_player.play()
-		audio_stream_player.connect("finished", Callable(self, "_on_audio_finished").bind(body))
+		body.update_score()
+		if not audio_stream_player.is_connected("finished", Callable(self, "_on_audio_finished")):
+			audio_stream_player.connect("finished", Callable(self, "_on_audio_finished").bind(body))
 
-func _on_audio_finished(body: Player) -> void:
-	body.update_score()
+func _on_audio_finished() -> void:
 	queue_free()

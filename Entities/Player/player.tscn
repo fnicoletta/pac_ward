@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c2trpcbfnmdym"]
+[gd_scene load_steps=6 format=3 uid="uid://c2trpcbfnmdym"]
 
 [ext_resource type="Script" path="res://Entities/Player/player.gd" id="1_ns6dm"]
 [ext_resource type="AudioStream" uid="uid://bv4pgqs8flm3j" path="res://Assets/Concrete Footsteps (1).mp3" id="2_doy85"]
+[ext_resource type="PackedScene" uid="uid://bi3lbpaa2jkva" path="res://Entities/Player/ui.tscn" id="3_5gydr"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_q4sea"]
 
@@ -30,3 +31,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.86987, 0)
 stream = ExtResource("2_doy85")
 pitch_scale = 0.8
 bus = &"Player"
+
+[node name="UI" parent="." instance=ExtResource("3_5gydr")]

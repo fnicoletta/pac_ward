@@ -11,6 +11,7 @@ var score: int = 0
 
 @onready var camera: Camera3D = %Camera3D
 @onready var footsteps: AudioStreamPlayer3D = %Footsteps
+@onready var ui: UI = $UI
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -66,4 +67,4 @@ func _handle_camera_input(mouse_motion: Vector2):
 
 func update_score() -> void:
 	score += 1
-	print(score)
+	ui.score = score

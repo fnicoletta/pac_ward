@@ -49,9 +49,12 @@ func _physics_process(delta: float) -> void:
 
 func _handle_choose_speed() -> float:
 	if Input.is_action_pressed("sprint"):
+		footsteps.pitch_scale = 1.2
 		return run_speed
 	if Input.is_action_pressed("crouch"):
+		footsteps.pitch_scale = 0.6
 		return crouch_speed
+	footsteps.pitch_scale = 0.8
 	return walk_speed
 
 

@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://c65xd4wshbh05"]
+[gd_scene load_steps=13 format=3 uid="uid://c65xd4wshbh05"]
 
 [ext_resource type="PackedScene" uid="uid://c2trpcbfnmdym" path="res://Entities/Player/player.tscn" id="2_3tyam"]
 [ext_resource type="Texture2D" uid="uid://dsjpte7ysk77a" path="res://Assets/Metal_08-128x128.png" id="2_rc823"]
 [ext_resource type="Texture2D" uid="uid://ds660kb3h512v" path="res://Assets/Metal_06-128x128.png" id="3_cbxva"]
 [ext_resource type="PackedScene" uid="uid://cvjrexgvet4bu" path="res://Items/Basic/basic.tscn" id="3_u2svd"]
+[ext_resource type="AudioStream" uid="uid://by1g0wf66luq4" path="res://Assets/sound-ambience-sonido-ambiente-3-14040.mp3" id="4_o8ibp"]
+[ext_resource type="PackedScene" uid="uid://vhf3v3vcdjgu" path="res://Assets/Dithering/dithering.tscn" id="5_h7uix"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8ju1g"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -955,5 +957,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.14489, 0.658181, 8.22604)
 [node name="Basic19" parent="Level_1/Pickups/BasicSpheres" instance=ExtResource("3_u2svd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.765846, 0.658181, 8.22604)
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Level_1"]
+stream = ExtResource("4_o8ibp")
+autoplay = true
+
 [node name="Player" parent="." instance=ExtResource("2_3tyam")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.31577, 5.00602, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1075, 5.00602, 0)
+
+[node name="Dithering" parent="." instance=ExtResource("5_h7uix")]

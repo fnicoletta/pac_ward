@@ -10,6 +10,7 @@ extends CharacterBody3D
 var score: int = 0
 
 @onready var camera: Camera3D = %Camera3D
+@onready var footsteps: AudioStreamPlayer3D = %Footsteps
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -33,9 +34,12 @@ func _physics_process(delta: float) -> void:
 	var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_back")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
+		if not footsteps.playing:
+			footsteps.play()
 		velocity.x = direction.x * current_speed
 		velocity.z = direction.z * current_speed
 	else:
+		footsteps.stop()
 		velocity.x = move_toward(velocity.x, 0, current_speed)
 		velocity.z = move_toward(velocity.z, 0, current_speed)
 

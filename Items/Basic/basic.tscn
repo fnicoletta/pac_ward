@@ -1,12 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://cvjrexgvet4bu"]
+[gd_scene load_steps=5 format=3 uid="uid://cvjrexgvet4bu"]
 
 [ext_resource type="Script" path="res://Items/Basic/basic.gd" id="1_6vy7y"]
+[ext_resource type="AudioStream" uid="uid://rbbby3svswow" path="res://Assets/arcade-ui-4-229502.mp3" id="2_he1bb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t2luq"]
 albedo_color = Color(50.811, 47.568, 0, 1)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_gbkyw"]
-radius = 0.2
+radius = 0.4
 
 [node name="Basic" type="Area3D"]
 script = ExtResource("1_6vy7y")
@@ -17,5 +18,9 @@ material = SubResource("StandardMaterial3D_t2luq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_gbkyw")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_he1bb")
+bus = &"Background"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

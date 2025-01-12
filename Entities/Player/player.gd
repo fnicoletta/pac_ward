@@ -7,6 +7,8 @@ extends CharacterBody3D
 @export var run_speed: float = 7
 @export var crouch_speed: float = 1.5
 
+var score: int = 0
+
 @onready var camera: Camera3D = %Camera3D
 
 
@@ -56,3 +58,8 @@ func _handle_camera_input(mouse_motion: Vector2):
 		
 	camera.rotate_x(-mouse_motion.y * mouse_sensitivity)
 	camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-90), deg_to_rad(90))
+
+
+func update_score() -> void:
+	score += 1
+	print(score)
